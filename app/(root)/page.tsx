@@ -1,5 +1,7 @@
-import StartupCard from "@/components/StartupCard";
+import StartupCard, { StartupCardType } from "@/components/StartupCard";
 import SearchForm from "../../components/SearchForm";
+import { client } from "@/sanity/lib/client";
+import { STARTUPS_QUERY } from "@/sanity/lib/queries";
 
 export default async function Home({
     searchParams,
@@ -7,19 +9,8 @@ export default async function Home({
     searchParams: Promise<{ query?: string }>;
 }) {
     const query = (await searchParams).query;
+    const posts = await client.fetch(STARTUPS_QUERY);
 
-    const posts = [
-        {
-            _createdAt: new Date(),
-            views: 55,
-            author: { _id: 1, name: "Jane Doe" },
-            _id: 1,
-            description: "This is a description",
-            image: "https://img.freepik.com/free-vector/start-up-business-background_1268-1347.jpg?t=st=1737329727~exp=1737333327~hmac=1fa87ae0264f321bedf4b2786befb18ecf8fcbee48b630968dad3a3c403f1139&w=360",
-            category: "Robots",
-            title: "We Robots",
-        },
-    ];
     return (
         <>
             <section className="pink_container">

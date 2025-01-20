@@ -1,11 +1,11 @@
-import { UserIcon } from "lucide-react";
+import { UserIcon } from "lucide-react"; // comment to generate types with sanity cli
 import { defineField, defineType } from "sanity";
 
 export const author = defineType({
     name: "author",
     title: "Author",
     type: "document",
-    icon: UserIcon,
+    icon: UserIcon, // comment to generate types with sanity cli
     fields: [
         defineField({
             name: "id",
