@@ -1,8 +1,8 @@
-import { auth, signIn, signOut } from "@/auth";
+import { auth } from "@/auth";
 import Image from "next/image";
 import Link from "next/link";
-import { SignIn } from "./SignIn-Button";
-import { SignOut } from "./SignOut-Button";
+import { SignIn } from "./SignInButton";
+import { SignOut } from "./SignOutButton";
 
 const Navbar = async () => {
     const session = await auth();
@@ -21,20 +21,12 @@ const Navbar = async () => {
                             <Link href="/startup/create">
                                 <span>Create</span>
                             </Link>
-
-                            {/* <button onClick={signOut}>
-                                <span>Logout</span>
-                            </button> */}
                             <SignOut />
-
                             <Link href={`/user/${session?.id}`}>
                                 <span>{session?.user?.name}</span>
                             </Link>
                         </>
                     ) : (
-                        // <button onClick={signIn}>
-                        //     <span>Login</span>
-                        // </button>
                         <SignIn />
                     )}
                 </div>
