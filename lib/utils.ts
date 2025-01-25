@@ -1,4 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
+import { resolve } from "path";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -19,4 +20,8 @@ export function formatTotalViews(totalViews: number) {
         : totalViews === 1
           ? `${totalViews} View`
           : `${totalViews} Views`;
+}
+
+export function parseServerActionResponse<T>(response: T) {
+    return JSON.parse(JSON.stringify(response));
 }

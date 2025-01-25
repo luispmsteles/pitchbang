@@ -44,7 +44,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                         >
                             <div className=" w-16 h-16 rounded-full overflow-hidden drop-shadow-lg">
                                 <Image
-                                    src={post?.author?.image}
+                                    src={post?.author?.image || "/avatar.png"}
                                     alt="avatar"
                                     width={64}
                                     height={64}
