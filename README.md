@@ -8,7 +8,7 @@ This project is a web application where creative, entrepeneur minds can share th
 
 I build this project to test some cool features and technologies.
 
-I'm using Next.js, specifically Next.js 15 and I focused on testing how much value can the new feature ISR (Incremental Server Regeneration) and TurboPack bring to both the client and developer.
+I'm using Next.js, specifically Next.js 15 and I focused on testing how much value can the new feature ISR (Incremental Site Regeneration) and TurboPack bring to both the client and developer.
 
 Of course I've used Tailwind CSS for utility-first CSS classes.
 
